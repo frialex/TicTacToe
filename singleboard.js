@@ -1,27 +1,48 @@
 $(function(){
 
-var stage = new Kinetic.Stage({
-  container: 'container',
-  width: 578,
-  height: 200
+  var stage  = new Kinetic.Stage({
+    container : 'container',
+    width     :  600,
+    height    :  400
+  });
+
+  drawBoard(stage)
 });
 
-var layer = new Kinetic.Layer();
 
-var rect = new Kinetic.Rect({
-  x: 239,
-  y: 75,
-  width: 100,
-  height: 50,
-  fill: 'green',
-  stroke: 'black',
-  strokeWidth: 4
-});
 
-      // add the shape to the layer
-      layer.add(rect);
+function drawBoard(stage){
 
-      // add the layer to the stage
-      stage.add(layer);
+  var layer = new Kinetic.Layer();
 
-});
+  var box = new Kinetic.Rect({
+    x: 10,
+    y: 10,
+    width: 100,
+    height: 100,
+    stroke: 'green',
+    strokeWidth: 4
+  });
+
+  var firstDivider = new Kinetic.Line({
+    x: 10,
+    y: 10,
+    points: [30, 2, 30, 98],
+    stroke: 'green'
+  });
+
+  var secondDivider = new Kinetic.Line({
+    x: 10,
+    y: 10,
+    points: [70, 2, 70, 98],
+    stroke: 'green'
+  });
+
+
+  layer.add(box);
+  layer.add(firstDivider);
+  layer.add(secondDivider);
+  stage.add(layer);
+
+}
+
