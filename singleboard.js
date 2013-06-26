@@ -12,7 +12,7 @@ $(function(){
 });
 
 
-
+//TODO: Need to draw multiple boards
 function drawBoard(stage){
 
   var layer = new Kinetic.Layer();
