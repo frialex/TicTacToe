@@ -21,27 +21,21 @@ function drawBoard(stage){
     width: 100,
     height: 100,
     stroke: 'green',
-    strokeWidth: 4
+    strokeWidth: 2
   });
 
-  var firstDivider = new Kinetic.Line({
-    x: 10,
-    y: 10,
-    points: [30, 2, 30, 98],
-    stroke: 'green'
-  });
+  
+  var leftVertical = createLine(10,10, [30,0, 30,100]);
+  var rightVertical = createLine(10,10, [70,0,70,100]);
 
-  var secondDivider = new Kinetic.Line({
-    x: 10,
-    y: 10,
-    points: [70, 2, 70, 98],
-    stroke: 'green'
-  });
-
+  var topHorizontal = createLine(10,10, [0,30,100,30]);
+  var bottomHorizontal = createLine(10,10, [0,70, 100,70]);
 
   layer.add(box);
-  layer.add(firstDivider);
-  layer.add(secondDivider);
+  layer.add(leftVertical);
+  layer.add(rightVertical);
+  layer.add(topHorizontal);
+  layer.add(bottomHorizontal);
   stage.add(layer);
 
 }
