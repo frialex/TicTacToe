@@ -27,7 +27,10 @@ function drawBoard(stage){
     strokeWidth: 2
   });
 
-  box.on('mouseover', function(obj){ console.log(Object.keys(obj));});
+  box.on('mouseover', moveIntoCell);
+  box.on('mouseout', moveOutOfCell)
+  box.on('click', clickedCell)
+
 
   //draw 9 squares inside the box
 
