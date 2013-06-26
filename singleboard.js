@@ -7,6 +7,8 @@ $(function(){
   });
 
   drawBoard(stage)
+
+  //Set up game loop here?
 });
 
 
@@ -24,18 +26,11 @@ function drawBoard(stage){
     strokeWidth: 2
   });
 
-  
-  var leftVertical = createLine(10,10, [30,0, 30,100]);
-  var rightVertical = createLine(10,10, [70,0,70,100]);
+  //draw 9 squares inside the box
 
-  var topHorizontal = createLine(10,10, [0,30,100,30]);
-  var bottomHorizontal = createLine(10,10, [0,70, 100,70]);
+  //Add click handler to each of the squares
 
-  layer.add(box);
-  layer.add(leftVertical);
-  layer.add(rightVertical);
-  layer.add(topHorizontal);
-  layer.add(bottomHorizontal);
+
   stage.add(layer);
 
 }
