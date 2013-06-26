@@ -12,8 +12,11 @@ $(function(){
 
 });
 
+//so we can show feedback to the 
+//user when they hover over a cell
+var dottedCircle;
 
-//TODO: Need to draw multiple boards
+
 function drawBoard(stage){
 
   var layer = new Kinetic.Layer();
@@ -27,14 +30,12 @@ function drawBoard(stage){
     strokeWidth: 2
   });
 
+  //draw 9 squares inside the box
+
+  //Add click handler to each of the squares  
   box.on('mouseover', moveIntoCell);
   box.on('mouseout', moveOutOfCell)
   box.on('click', clickedCell)
-
-
-  //draw 9 squares inside the box
-
-  //Add click handler to each of the squares
 
   layer.add(box);
   stage.add(layer);
