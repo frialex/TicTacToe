@@ -21,23 +21,29 @@ function drawBoard(stage){
 
   var layer = new Kinetic.Layer();
 
-  var box = new Kinetic.Rect({
-    x: 10,
-    y: 10,
-    width: 100,
-    height: 100,
-    stroke: 'green',
-    strokeWidth: 2
-  });
+  var box = createRect(10,10,90,90);
+  layer.add(box);
 
   //draw 9 squares inside the box
+  var tl = createRect(10,10,30,30);
+  layer.add(tl);
+  var tm = createRect(40,10,30,30);
+  layer.add(tm);
 
-  //Add click handler to each of the squares  
-  box.on('mouseover', moveIntoCell);
-  box.on('mouseout', moveOutOfCell)
-  box.on('click', clickedCell)
+  //Create this matrix with [x,y] = permutation(10,40,70)
+  $.each([[10,10],[40,10],[70,10],
+          [10,40],[40,40],[70,40],
+          [10,70],[40,70],[70,70]], 
 
-  layer.add(box);
+          function(i, xy){
+            var cell = createRect(xy[0],xy[1],30,30);
+            layer.add(cell);
+
+            cell.on('mouseover', moveIntoCell);
+            cell.on('mouseout', moveOutOfCell)
+            cell.on('click', clickedCell)
+  });
+
   stage.add(layer);
 
 }

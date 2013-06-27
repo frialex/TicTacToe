@@ -1,10 +1,12 @@
 
-function createLine(x, y, points) {
-	var line = new Kinetic.Line({
+function createRect(x, y, width, height) {
+	var line = new Kinetic.Rect({
 		x: x,
 		y: y,
-		points: points,
-		stroke: 'green'
+		width: width,
+		height: height,
+		stroke: 'green',
+		strokeWidth: 2
 	});
 
 	return line;
