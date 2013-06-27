@@ -14,15 +14,17 @@ function createRect(x, y, width, height) {
 
 
 function moveIntoCell(cell){
-	
+	 console.log('moveIntoCell(): ');
+	 var x = cell.targetNode.attrs.x;
+	 var y = cell.targetNode.attrs.y;
 	//Draw a circle (of players color) inside the cell
 	dottedCircle = new Kinetic.Circle({
-		x: 60, //TODO: Change these to match currently hovered cell
-		y: 60,
-		radius: 45,
+		x: x + 15,
+		y: y + 15,
+		radius: 10,
 		stroke: 'red',
 		strokeWidth: 1,
-		dashArray: [10,10]
+		dashArray: [2,4]
 	});
 
 	this.parent.add(dottedCircle);
