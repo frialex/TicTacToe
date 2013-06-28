@@ -10,7 +10,7 @@ function createRect(x, y, width, height, boardId, cellId) {
 		id: { board: boardId, cell: cellId }
 	});
 
-	console.log(cell.attrs.id);
+	gameState[boardId][cellId] = 0;
 	return cell;
 }
 
@@ -38,17 +38,33 @@ function moveOutOfCell(cell){
 }
 
 function clickedCell(cell){
-	// console.log('clickedCell(): '); 
 	// console.log( cell.targetNode.attrs);
+	var ci = cell.targetNode.attrs.id;
+	var clickedCell = gameState[ci.board][ci.cell];
+	//if cell contains marker, then return
+	if(clickedCell !== 0) return;
 
 	switch(players.current)	{
-		case 'one': console.log('draw circle'); 
+		case 'one': placeMarker(1);
 					players.current = 'two';
 					break;
-		case 'two': console.log('draw x');
+		case 'two': placeMarker(2);
 					players.current = 'one';
 					break;
 	}
+
+	function placeMarker(player){
+				
+		gameState[ci.board][ci.cell] = player;
+		
+		switch(player){
+			case 1: console.log('Draw Circle');
+					break;
+
+			case 2: console.log('Draw X');
+					break;
+		}
+	};
 
 	//Check for three adjacent circles of the same color
 
