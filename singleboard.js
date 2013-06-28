@@ -1,17 +1,26 @@
-$(function(){
+$(function StartUp(){
 
-  var stage  = new Kinetic.Stage({
-    container : 'container',
-    width     :  600,
-    height    :  400
-  });
 
-  drawBoard(stage, 10,  10);
-  drawBoard(stage, 110, 10);
-  drawBoard(stage, 10,  110);
-  drawBoard(stage, 110, 110);
+  var stageDrawer = function stageFactory(){
+    var stage  = new Kinetic.Stage({      
+      container : 'container',
+      width     :  600,
+      height    :  400
+    });
 
-  //Set up game loop here?
+    var boardId = 0;    
+
+    return function(x, y){
+      drawBoard(stage, boardId, x, y);
+      boardId++;
+    };
+  }();
+
+  $.each([[10,10],[110,10],
+          [10,110],[110,110]],
+          function(i, xy){
+            stageDrawer(xy[0],xy[1]);
+    });
 
 });
 
@@ -19,30 +28,39 @@ $(function(){
 //user when they hover over a cell
 var dottedCircle;
 
+//2d array, index by cell.attr.id.board
+var gameState;
 
-function drawBoard(stage, x, y){
+//eventuall want to have more than two players.
+//so Boolean var won't work. 2vs2 would be cool
+var players = {
+  one: 'player name here',
+  two: 'player two',
+  current: 'one' //Let first person have turn by defautl. 
+};
+
+
+function drawBoard(stage, boardId, x, y){
 
   var layer = new Kinetic.Layer();
 
-  var box = createRect(x,y,90,90);
-  layer.add(box);
+  var cellId = 0;
+//draw 9 squares inside the box
+//Create this matrix with [x,y] = permutation(10,40,70)?
+$.each([[x,y],    [x+30,y],     [x+60,y],
+  [x,y+30], [x+30,y+30],  [x+60,y+30],
+  [x,y+60], [x+30,y+60],  [x+60,y+60]], 
 
-  //draw 9 squares inside the box
-  //Create this matrix with [x,y] = permutation(10,40,70)
-  $.each([[x,y],[x+30,y],[x+60,y],
-          [x,y+30],[x+30,y+30],[x+60,y+30],
-          [x,y+60],[x+30,y+60],[x+60,y+60]], 
+  function CellMaker(i, xy){
+    var cell = createRect(xy[0],xy[1],30,30, boardId, cellId++);
+    layer.add(cell);
 
-          function(i, xy){
-            var cell = createRect(xy[0],xy[1],30,30);
-            layer.add(cell);
-
-            cell.on('mouseover', moveIntoCell);
-            cell.on('mouseout', moveOutOfCell)
-            cell.on('click', clickedCell)
+    cell.on('mouseover', moveIntoCell);
+    cell.on('mouseout', moveOutOfCell)
+    cell.on('click', clickedCell)
   });
 
-  stage.add(layer);
+stage.add(layer);
 
 }
 

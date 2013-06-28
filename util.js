@@ -1,20 +1,21 @@
 
-function createRect(x, y, width, height) {
-	var line = new Kinetic.Rect({
+function createRect(x, y, width, height, boardId, cellId) {
+	var cell = new Kinetic.Rect({
 		x: x,
 		y: y,
 		width: width,
 		height: height,
 		stroke: 'green',
-		strokeWidth: 2
+		strokeWidth: 2,
+		id: { board: boardId, cell: cellId }
 	});
 
-	return line;
+	console.log(cell.attrs.id);
+	return cell;
 }
 
 
 function moveIntoCell(cell){
-	 console.log('moveIntoCell(): ');
 	 var x = cell.targetNode.attrs.x;
 	 var y = cell.targetNode.attrs.y;
 	//Draw a circle (of players color) inside the cell
@@ -37,10 +38,22 @@ function moveOutOfCell(cell){
 }
 
 function clickedCell(cell){
-	console.log('clickedCell(): '); 
-	console.log( cell.targetNode.attrs);
+	// console.log('clickedCell(): '); 
+	// console.log( cell.targetNode.attrs);
+
+	switch(players.current)	{
+		case 'one': console.log('draw circle'); 
+					players.current = 'two';
+					break;
+		case 'two': console.log('draw x');
+					players.current = 'one';
+					break;
+	}
 
 	//Check for three adjacent circles of the same color
+
+	//check if three game boards have been won
+
 	//in a diagonal, horizontal, or vertical direction
 
 	//If no winner, transfer control to other player
