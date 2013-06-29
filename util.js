@@ -54,40 +54,31 @@ function moveOutOfCell(cell){
 function clickedCell(cell){
 	// console.log( cell.targetNode.attrs);
 	var ci = cell.targetNode.attrs.id;
-	var clickedCell = gameState[ci.board][ci.cell];
+	var stage  = cell.targetNode.parent;
+	var clickedCellState = gameState[ci.board][ci.cell];
 	//if cell contains marker, then return
-	if(clickedCell !== 0) return;
+	if(clickedCellState !== 0) return;
+
+	var x = cell.targetNode.attrs.x;
+	var y = cell.targetNode.attrs.y;
 
 	switch(players.current)	{
-		case 'one': placeMarker(1);
+		case 'one': drawTic(x,y,stage);
+					gameState[ci.board][ci.cell] = 1;
 					players.current = 'two';
 					break;
-		case 'two': placeMarker(2);
+		case 'two': drawTac(x,y,stage);
+					gameState[ci.board][ci.cell] = 2;
 					players.current = 'one';
 					break;
 	}
 
-	function placeMarker(player){
-				
-		gameState[ci.board][ci.cell] = player;
-		var x = cell.targetNode.attrs.x;
-		var y = cell.targetNode.attrs.y;
-
-		switch(player){
-			case 1: drawTic(x,y,cell.targetNode.parent);
-					break;
-			case 2: drawTac(x,y,cell.targetNode.parent);
-					break;
-		}
-	};
 
 	//in this board, check for three in a row. If found, 
-	//Turn the color of the stage to players color (red, green,...)
+	//Turn the color of the board to players color (red, green,...)
 
-
-	//check if three game boards have been won
-
-	//in a diagonal, horizontal, or vertical direction
+	//in the stage, check for three boards in a row that are owned 
+	//by the player. If so, show winner screen
 
 	//If no winner, transfer control to other player
 
