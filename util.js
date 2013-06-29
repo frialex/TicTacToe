@@ -5,7 +5,7 @@ function createRect(x, y, width, height, boardId, cellId) {
 		y: y,
 		width: width,
 		height: height,
-		stroke: 'green',
+		stroke: 'black',
 		strokeWidth: 2,
 		id: { board: boardId, cell: cellId }
 	});
@@ -18,22 +18,36 @@ function createRect(x, y, width, height, boardId, cellId) {
 function moveIntoCell(cell){
 	 var x = cell.targetNode.attrs.x;
 	 var y = cell.targetNode.attrs.y;
-	//Draw a circle (of players color) inside the cell
-	dottedCircle = new Kinetic.Circle({
-		x: x + 15,
-		y: y + 15,
-		radius: 10,
-		stroke: 'red',
-		strokeWidth: 1,
-		dashArray: [2,4]
-	});
-
-	this.parent.add(dottedCircle);
+	//Draw a shape of players color inside the cell
+	if(players.current === 'one'){
+		feedbackShape = new Kinetic.Circle({
+			x: x + 15,
+			y: y + 15,
+			radius: 10,
+			stroke: 'red',
+			strokeWidth: 1,
+			dashArray: [2,4]
+		});
+	} else {
+			feedbackShape = new Kinetic.Star({
+			x: x+15,
+			y: y+15,
+			numPoints: 2,
+			innerRadius: 10,
+			outerRadius: 10,
+			stroke: 'green',
+			strokeWidth: 1,
+			dashArray: [2,4]
+		});
+	}
+	this.parent.add(feedbackShape);
 	this.parent.drawScene(); 
 }
 
+
+
 function moveOutOfCell(cell){
-	dottedCircle.hide();
+	feedbackShape.hide();
 	this.parent.drawScene();
 }
 
@@ -56,17 +70,20 @@ function clickedCell(cell){
 	function placeMarker(player){
 				
 		gameState[ci.board][ci.cell] = player;
-		
-		switch(player){
-			case 1: console.log('Draw Circle');
-					break;
+		var x = cell.targetNode.attrs.x;
+		var y = cell.targetNode.attrs.y;
 
-			case 2: console.log('Draw X');
+		switch(player){
+			case 1: drawTic(x,y,cell.targetNode.parent);
+					break;
+			case 2: drawTac(x,y,cell.targetNode.parent);
 					break;
 		}
 	};
 
-	//Check for three adjacent circles of the same color
+	//in this board, check for three in a row. If found, 
+	//Turn the color of the stage to players color (red, green,...)
+
 
 	//check if three game boards have been won
 
@@ -75,5 +92,33 @@ function clickedCell(cell){
 	//If no winner, transfer control to other player
 
 
+}
+
+function drawTic(x,y, stage){
+	var tic = new Kinetic.Circle({
+		x: x + 15,
+		y: y + 15,
+		radius: 10,
+		stroke: 'red',
+		strokeWidth: 1		
+	});
+
+	stage.add(tic);
+	stage.drawScene();
+}
+
+function drawTac(x, y, stage){
+	var fakeTac = new Kinetic.Star({
+		x: x+15,
+		y: y+15,
+		numPoints: 2,
+		innerRadius: 10,
+		outerRadius: 10,
+		stroke: 'green',
+		strokeWidth: 1
+	});
+
+	stage.add(fakeTac);
+	stage.drawScene();
 }
 

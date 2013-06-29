@@ -1,6 +1,6 @@
 //so we can show feedback to the 
 //user when they hover over a cell
-var dottedCircle;
+var feedbackShape;
 
 //eventuall want to have more than two players.
 //so Boolean var won't work. 2vs2 would be cool
