@@ -10,10 +10,16 @@ var players = {
   current: 'one' //Let first person have turn by defautl. 
 };
 
+var playerColor = {
+  1: 'red',
+  2: 'green'
+};
+
 //2d array, index by cell.attr.id.board
 //[boardId][Celld] => 0 = nothing in it
 //                 => 1...n = player n's symbol in cell
 var gameState = [];
+
 
 $(function StartUp(){
 
@@ -34,8 +40,9 @@ $(function StartUp(){
   }();
 
   //Draw four boards
-  $.each([[10,10],  [110,10],
-          [10,110], [110,110]],
+  $.each([[10,10],  [110,10],   [210,10],
+          [10,110], [110,110],  [210,110],
+          [10,210], [110,210],  [210,210]],
           function(i, xy){
             stageDrawer(xy[0],xy[1]);
   });

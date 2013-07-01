@@ -24,7 +24,7 @@ function moveIntoCell(cell){
 			x: x + 15,
 			y: y + 15,
 			radius: 10,
-			stroke: 'red',
+			stroke: playerColor[1],
 			strokeWidth: 1,
 			dashArray: [2,4]
 		});
@@ -32,12 +32,12 @@ function moveIntoCell(cell){
 			feedbackShape = new Kinetic.Star({
 			x: x+15,
 			y: y+15,
-			numPoints: 2,
+			numPoints: 3,
 			innerRadius: 10,
 			outerRadius: 10,
-			stroke: 'green',
+			stroke: playerColor[2],
 			strokeWidth: 1,
-			dashArray: [2,4]
+			dashArray: [2,3]
 		});
 	}
 	this.parent.add(feedbackShape);
@@ -76,6 +76,14 @@ function clickedCell(cell){
 
 	//in this board, check for three in a row. If found, 
 	//Turn the color of the board to players color (red, green,...)
+	if((hOut = horizontalWinnerCheck(gameState[ci.board])) > 0 )
+	{
+		// cell.targetNode.attrs.fill = 'red';
+		$.each(	cell.targetNode.parent.children, 
+				function(i, node){
+					node.attrs.fill = playerColor[hOut];
+				});
+	}
 
 	//in the stage, check for three boards in a row that are owned 
 	//by the player. If so, show winner screen
@@ -83,6 +91,18 @@ function clickedCell(cell){
 	//If no winner, transfer control to other player
 
 
+}
+
+function horizontalWinnerCheck(board)
+{
+	if((board[0] === board[1]) && (board[0] === board[2]))
+		return board[0];
+	else if((board[3] === board[4]) && (board[3] === board[5]))
+		return board[3];
+	else if((board[6] === board[7]) && (board[6] === board[8]))
+		return board[6];
+	else
+		return 0;
 }
 
 function drawTic(x,y, stage){
@@ -102,7 +122,7 @@ function drawTac(x, y, stage){
 	var fakeTac = new Kinetic.Star({
 		x: x+15,
 		y: y+15,
-		numPoints: 2,
+		numPoints: 4,
 		innerRadius: 10,
 		outerRadius: 10,
 		stroke: 'green',
