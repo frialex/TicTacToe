@@ -19,7 +19,7 @@ function moveIntoCell(cell){
 	 var x = cell.targetNode.attrs.x;
 	 var y = cell.targetNode.attrs.y;
 	//Draw a shape of players color inside the cell
-	if(players.current === 'one'){
+	if(players.current === 1){
 		feedbackShape = new Kinetic.Circle({
 			x: x + 15,
 			y: y + 15,
@@ -61,29 +61,25 @@ function clickedCell(cell){
 
 	var x = cell.targetNode.attrs.x;
 	var y = cell.targetNode.attrs.y;
+	var nextTurn;
 
 	switch(players.current)	{
-		case 'one': drawTic(x,y,stage);
+		case 1: drawTic(x,y,stage);
 					gameState[ci.board][ci.cell] = 1;
-					players.current = 'two';
+					nextTurn = 2;
 					break;
-		case 'two': drawTac(x,y,stage);
+		case 2: drawTac(x,y,stage);
 					gameState[ci.board][ci.cell] = 2;
-					players.current = 'one';
+					nextTurn = 1;
 					break;
 	}
 
 
 	//in this board, check for three in a row. If found, 
 	//Turn the color of the board to players color (red, green,...)
-	if((hOut = horizontalWinnerCheck(gameState[ci.board])) > 0 )
-	{
-		// cell.targetNode.attrs.fill = 'red';
-		$.each(	cell.targetNode.parent.children, 
-				function(i, node){
-					node.attrs.fill = playerColor[hOut];
-				});
-	}
+
+	horizontalWinnerCheck(gameState[ci.board], cell.targetNode.parent);
+	players.current = nextTurn;
 
 	//in the stage, check for three boards in a row that are owned 
 	//by the player. If so, show winner screen
@@ -93,16 +89,20 @@ function clickedCell(cell){
 
 }
 
-function horizontalWinnerCheck(board)
+function horizontalWinnerCheck(board, layer)
 {
-	if((board[0] === board[1]) && (board[0] === board[2]))
-		return board[0];
-	else if((board[3] === board[4]) && (board[3] === board[5]))
-		return board[3];
-	else if((board[6] === board[7]) && (board[6] === board[8]))
-		return board[6];
-	else
-		return 0;
+
+	$.each(	[[0,1,2], [3,4,5],[6,7,8]], 
+		function(i, checLine){
+			if( (board[checLine[0]] === board[checLine[1]]) && (board[checLine[0]] === board[checLine[2]]) && (board[checLine[0]] > 0) )
+			{
+				$.each(	layer.children,
+					function(i, node){
+						node.attrs.fill = playerColor[players.current];
+					});
+			}
+		});
+
 }
 
 function drawTic(x,y, stage){
@@ -110,7 +110,7 @@ function drawTic(x,y, stage){
 		x: x + 15,
 		y: y + 15,
 		radius: 10,
-		stroke: 'red',
+		stroke: playerColor[1],
 		strokeWidth: 1		
 	});
 
@@ -125,7 +125,7 @@ function drawTac(x, y, stage){
 		numPoints: 4,
 		innerRadius: 10,
 		outerRadius: 10,
-		stroke: 'green',
+		stroke: playerColor[2],
 		strokeWidth: 1
 	});
 

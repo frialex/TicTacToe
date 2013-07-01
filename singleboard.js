@@ -5,9 +5,9 @@ var feedbackShape;
 //eventuall want to have more than two players.
 //so Boolean var won't work. 2vs2 would be cool
 var players = {
-  one: 'player name here',
-  two: 'player two',
-  current: 'one' //Let first person have turn by defautl. 
+  1: 'player name here',
+  2: 'player two',
+  current: 1 //Let first person have turn by defautl. 
 };
 
 var playerColor = {
