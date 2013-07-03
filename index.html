@@ -4,6 +4,16 @@
 	<script type="text/javascript" src='http://code.jquery.com/jquery-1.10.1.min.js'></script>
 	<script type="text/javascript" src='util.js'></script>
 	<script type="text/javascript" src='singleboard.js'></script>
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+	var socket = io.connection('http://localhost:667');
+	socket.on('test', function(data){
+		console.log(data);
+		socket.emmit('testSend', {data: 'super'});
+	});
+	</script>
+
 </head>
 
 <body>
