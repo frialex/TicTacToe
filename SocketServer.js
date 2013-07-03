@@ -22,7 +22,7 @@ io.sockets.on('connection', function (socket) {
     console.log('From: ' + socket.id + ' Data: ' + data);
   });
 
-  socket.on('cellClicked' function(cell){
+  socket.on('cellClicked', function (cell) {
     console.log(cell);
     socket.brodcast.emit(cell);
   });
