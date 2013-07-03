@@ -78,7 +78,7 @@ function clickedCell(cell){
 	//in this board, check for three in a row. If found, 
 	//Turn the color of the board to players color (red, green,...)
 
-	horizontalWinnerCheck(gameState[ci.board], cell.targetNode.parent);
+	CheckForWinner(gameState[ci.board], cell.targetNode.parent);
 	players.current = nextTurn;
 
 	//in the stage, check for three boards in a row that are owned 
@@ -89,20 +89,25 @@ function clickedCell(cell){
 
 }
 
-function horizontalWinnerCheck(board, layer)
+//Go through all possible combination of three in a row
+function CheckForWinner(board, layer)
 {
 
-	$.each(	[[0,1,2], [3,4,5],[6,7,8]], 
-		function(i, checLine){
-			if( (board[checLine[0]] === board[checLine[1]]) && (board[checLine[0]] === board[checLine[2]]) && (board[checLine[0]] > 0) )
-			{
-				$.each(	layer.children,
-					function(i, node){
-						node.attrs.fill = playerColor[players.current];
-					});
-			}
-		});
+	$.each(	[	[0,1,2],[3,4,5],[6,7,8],  //Horizontal
+				[0,3,6],[1,4,7],[2,5,8], //Vertical
+				[0,4,8],[2,4,6] ], 		//Diagonal 
 
+			function(i, row){
+				var first = board[row[0]];
+				if( (first === board[row[1]]) && (first === board[row[2]]) && (first > 0) )
+				{
+					$.each(	layer.children,
+						function(i, node){
+							node.attrs.fill = playerColor[players.current];
+						});
+				}
+			}
+		);
 }
 
 function drawTic(x,y, stage){
