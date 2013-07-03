@@ -464,7 +464,8 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -722,6 +723,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"",
+				"/Users/frialex/Documents/Work/Mobile_Form/MobileForm.sublime-project"
+			]
 		],
 		"width": 380.0
 	},

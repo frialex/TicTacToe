@@ -6,9 +6,9 @@ var app = require('express')()
   , express = require('express')
 
 
-app.listen(666);
+server.listen(666);
 app.use(express.static(path.join(__dirname,'/')));
-app.get('/', function(req,res){
+app.get('/index.html', function(req,res){
   res.sendfile('index.html');
 });
 

@@ -7,10 +7,10 @@
 
 	<script src="http://localhost:666/socket.io/socket.io.js"></script>
 	<script>
-	var socket = io.connection('http://localhost:666');
+	var socket = io.connect('http://localhost:666');
 	socket.on('test', function(data){
 		console.log(data);
-		socket.emmit('testSend', {data: 'super'});
+		socket.emit('testSend', {data: 'super'});
 	});
 	</script>
 
