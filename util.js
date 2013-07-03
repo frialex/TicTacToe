@@ -84,6 +84,8 @@ function clickedCell(cell){
 	//in the stage, check for three boards in a row that are owned 
 	//by the player. If so, show winner screen
 
+	
+
 	//If no winner, transfer control to other player
 
 
