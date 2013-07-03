@@ -1,0 +1,734 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"e",
+				"express"
+			],
+			[
+				"sock",
+				"socket"
+			],
+			[
+				"fi",
+				"fill"
+			],
+			[
+				"cell",
+				"cellOwner"
+			],
+			[
+				"Cu",
+				"currentPlayer"
+			],
+			[
+				"cu",
+				"currentPlayer"
+			],
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"sc",
+				"src"
+			],
+			[
+				"pl",
+				"player"
+			],
+			[
+				"ne",
+				"nextTurn"
+			],
+			[
+				"chec",
+				"checLine"
+			],
+			[
+				"pla",
+				"playerColor"
+			],
+			[
+				"s",
+				"script"
+			],
+			[
+				"board",
+				"board"
+			],
+			[
+				"bo",
+				"board"
+			],
+			[
+				"draw",
+				"drawTic"
+			],
+			[
+				"cel",
+				"cell"
+			],
+			[
+				"st",
+				"stage"
+			],
+			[
+				"boa",
+				"board"
+			],
+			[
+				"gae",
+				"gameState"
+			],
+			[
+				"game",
+				"gameState"
+			],
+			[
+				"ce",
+				"cell"
+			],
+			[
+				"sta",
+				"stageDrawer"
+			],
+			[
+				"ar",
+				"attrs"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"str",
+				"strokeWidth"
+			],
+			[
+				"p",
+				"p"
+			],
+			[
+				"f",
+				"f"
+			],
+			[
+				"alt",
+				"alt"
+			],
+			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"li",
+				"li"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"pad",
+				"padding-bottom"
+			],
+			[
+				"list",
+				"listblock"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 604,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "singleboard.js",
+			"settings":
+			{
+				"buffer_size": 1715,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "util.js",
+			"settings":
+			{
+				"buffer_size": 2852,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "SocketServer.js",
+			"settings":
+			{
+				"buffer_size": 509,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 149,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 287.0,
+		"selected_items":
+		[
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"reind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"htm",
+				"Set Syntax: HTML"
+			],
+			[
+				"reon",
+				"Set Syntax: Regular Expression"
+			],
+			[
+				"reinde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"setht",
+				"Set Syntax: HTML"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"selectal",
+				"Bookmarks: Select All"
+			],
+			[
+				"select",
+				"Bookmarks: Select All"
+			],
+			[
+				"sethtm",
+				"Set Syntax: HTML"
+			],
+			[
+				"remove p",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"inspa",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"packageins",
+				"Package Control: Install Package"
+			],
+			[
+				"syntaxhtm",
+				"Set Syntax: HTML"
+			],
+			[
+				"goto",
+				"Set Syntax: Regular Expressions (Python)"
+			],
+			[
+				"syntaxcss",
+				"Set Syntax: CSS"
+			],
+			[
+				"boo",
+				"Bookmarks: Select Next"
+			]
+		],
+		"width": 431.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/frialex/Documents/Work/Mobile_Form/js/main.js",
+		"/Users/frialex/dev/TicTacToe/singleboard.js",
+		"/Users/frialex/Documents/Work/Mobile_Form/test.html",
+		"/Users/frialex/dev/TicTacToe/package.json",
+		"/Users/frialex/dev/TicTacToe/packages.json",
+		"/Users/frialex/Documents/Work/Mobile_Form/index.html",
+		"/Users/frialex/Documents/Work/Mobile_Form/js/FormController.js",
+		"/Users/frialex/Documents/Demo Projects/TicTacToe/util.js",
+		"/Users/frialex/Documents/Demo Projects/TicTacToe/index.html",
+		"/Users/frialex/Documents/Demo Projects/TicTacToe/singleboard.js",
+		"/Users/frialex/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/frialex/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/frialex/Desktop/Letter to amber",
+		"/Users/frialex/Desktop/LikeHate",
+		"/Users/frialex/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			",'/')));",
+			"currentPlayer",
+			"board[row[1]]",
+			"cell",
+			"Cell",
+			"cell",
+			"Cell",
+			"cell",
+			"666",
+			"my",
+			"type",
+			"checLine",
+			"board[checLine[0]",
+			"board",
+			" //",
+			"horizontalWinnerCheck",
+			"from",
+			"From",
+			"from",
+			"area",
+			"inspectorName",
+			"ame",
+			"inspectorName",
+			"players",
+			"'two",
+			"fill",
+			" \">",
+			"> ",
+			"setup",
+			"4",
+			"2",
+			"ci",
+			"clickedCell",
+			"dottedCircle",
+			"ttedCircle",
+			"break",
+			"line",
+			"70",
+			"40",
+			"10",
+			"ombination",
+			"tmpBox",
+			"box",
+			"createRect",
+			"secondLine",
+			"firstLine",
+			"secondDivider",
+			"first",
+			"ctrl.*up",
+			"ctrl\\+shift\\+n",
+			"ctrl\\+shift\\+p",
+			"ctrl.*p",
+			"p",
+			"firstDivider",
+			"first",
+			"firstD",
+			"first",
+			"firstDivider",
+			"first",
+			"firstDivid",
+			"firstDivider",
+			"box",
+			"back",
+			"move",
+			"alt+f",
+			"ctrl+f",
+			"alt+f",
+			"firstLine",
+			"line",
+			"var",
+			"	\n",
+			"(){})",
+			"2k",
+			"listblock",
+			"listblockHigh",
+			"inline",
+			"; ",
+			" :",
+			"isplay",
+			"h",
+			"I",
+			"--------------",
+			"emmet",
+			"LeftBar",
+			"li",
+			"LeftBarSelection",
+			"LeftBar",
+			"></",
+			"ctrl+e",
+			"height",
+			"\n    ",
+			">></",
+			"li>",
+			"id",
+			"><",
+			"li",
+			"menu.*a",
+			"li",
+			"10px",
+			"img",
+			"Frison",
+			"Alexanr"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"firstDivider",
+			"firstLine",
+			"(){})",
+			"ListBlockHigh"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 604,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								91,
+								91
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "singleboard.js",
+					"settings":
+					{
+						"buffer_size": 1715,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "util.js",
+					"settings":
+					{
+						"buffer_size": 2852,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2681,
+								2681
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 1.0,
+						"translation.y": 1573.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "SocketServer.js",
+					"settings":
+					{
+						"buffer_size": 509,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								342,
+								342
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "package.json",
+					"settings":
+					{
+						"buffer_size": 149,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								102,
+								102
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.430120849609,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 241.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"in",
+				"/Users/frialex/dev/TicTacToe/index.html"
+			],
+			[
+				"so",
+				"/Users/frialex/dev/TicTacToe/SocketServer.js"
+			],
+			[
+				"sin",
+				"/Users/frialex/dev/TicTacToe/singleboard.js"
+			],
+			[
+				"ut",
+				"/Users/frialex/dev/TicTacToe/util.js"
+			],
+			[
+				"s",
+				"/Users/frialex/dev/TicTacToe/SocketServer.js"
+			],
+			[
+				"ma",
+				"/Users/frialex/Documents/Work/Mobile_Form/js/main.js"
+			],
+			[
+				"",
+				"/Users/frialex/Documents/Work/Mobile_Form/index.html"
+			],
+			[
+				"te",
+				"/Users/frialex/Documents/Work/Mobile_Form/test.html"
+			],
+			[
+				"form",
+				"/Users/frialex/Documents/Work/Mobile_Form/js/FormController.js"
+			],
+			[
+				"key",
+				"/Users/frialex/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap"
+			],
+			[
+				"ke",
+				"/Users/frialex/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap"
+			],
+			[
+				"sing",
+				"/Users/frialex/Documents/Demo Projects/TicTacToe/singleboard.js"
+			],
+			[
+				"list",
+				"/Users/frialex/Documents/Demo Projects/ThreeTODO/innerList.html"
+			],
+			[
+				"cs",
+				"/Users/frialex/Desktop/PlugMyRide/home.css"
+			],
+			[
+				"h.c",
+				"/Users/frialex/Desktop/PlugMyRide/home.css"
+			],
+			[
+				"h.h",
+				"/Users/frialex/Desktop/PlugMyRide/home.html"
+			],
+			[
+				"homcs",
+				"/Users/frialex/Desktop/PlugMyRide/home.css"
+			],
+			[
+				"ht",
+				"/Users/frialex/Desktop/PlugMyRide/home.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 145.0,
+	"status_bar_visible": true
+}
