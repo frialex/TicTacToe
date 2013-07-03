@@ -2,7 +2,7 @@
 	"name": "Ultimate-Tic-Tac-Toe",
 	"version": "0.0.1",
 	"dependencies": {
-		"socket.io": "*",
-		"express": "*"
+		"socket.io": "0.9.16",
+		"express": "3.3.1"
 	}
 }

@@ -1,8 +1,17 @@
-var app = require('http').createServer(handler)
-  , io = require('socket.io').listen(app)
+var io = require('socket.io').listen(app)
   , fs = require('fs')
+  , express = require('express')
+  , path = require('path')
 
-app.listen(667);
+//app.listen(667);
+var app = express();
+app.use(express.static(path.join(__dirname,'singleboard.js')));
+
+app.listen(666);
+
+
+
+
 
 function handler (req, res) {
   fs.readFile(__dirname + '/index.html',
