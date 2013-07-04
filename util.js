@@ -18,9 +18,10 @@ function createRect(x, y, width, height, boardId, cellId) {
 }
 
 
-function moveIntoCell(cell){
-	var x = cell.targetNode.attrs.x;
-	var y = cell.targetNode.attrs.y;
+function moveIntoCell(e){
+	
+	var x = e.targetNode.attrs.x;
+	var y = e.targetNode.attrs.y;
 	//Draw a shape of players color inside the cell
 	if(players.current === 1){
 		feedbackShape = new Kinetic.Circle({
@@ -47,13 +48,17 @@ function moveIntoCell(cell){
 	this.parent.drawScene(); 
 }
 
-function moveOutOfCell(cell){
+function moveOutOfCell(e){
+	// var c = e.targetNode;
+	// console.log('Board: ' + c.attrs.id.board + ' Cell: ' + c.attrs.id.cell);
 	feedbackShape.hide();
 	this.parent.drawScene();
 }
 
 function clickedCell(e){
 	// console.log( e.targetNode.attrs);
+	if(players.me !== players.current) return;
+	
 	var ci = e.targetNode.attrs.id;
 	var stage  = e.targetNode.parent;
 	var clickedCellState = gameState[ci.board][ci.cell].ttt.cellOwner;
@@ -81,7 +86,7 @@ function clickedCell(e){
 
 	if(CheckForWinner(gameState[ci.board], e.targetNode.parent))
 	{
-		alert('board was won!');
+		console.log('board was won!');
 		//in the stage, check for three boards in a row that are owned 
 		//by the player. If so, show winner screen
 	}
@@ -90,6 +95,12 @@ function clickedCell(e){
 
 	//If no winner, transfer control to other player
 	players.current = nextTurn;
+
+	//send move to other player
+	socket.emit('cellClicked', {	board : ci.board,
+								 	cell  : ci.cell,
+								    player: gameState[ci.board][ci.cell].ttt.cellOwner});
+
 
 	//enable the next board, and disable others, per rule
 

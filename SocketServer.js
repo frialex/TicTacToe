@@ -14,9 +14,10 @@ app.get('/index.html', function(req,res){
 
 console.log('Express running @ localhost:666');
 
-
+var PlayerNumber = 1;
 io.sockets.on('connection', function (socket) {
-  socket.emit('test', { hello: 'world' });
+  socket.emit('PlayerNumber', { player: PlayerNumber });
+  PlayerNumber++;
 
   socket.on('testSend', function (data) {
     console.log('From: ' + socket.id + ' Data: ' + data);
@@ -24,7 +25,7 @@ io.sockets.on('connection', function (socket) {
 
   socket.on('cellClicked', function (cell) {
     console.log(cell);
-    socket.brodcast.emit(cell);
+    socket.broadcast.emit(cell);
   });
 
 

@@ -7,7 +7,8 @@ var feedbackShape;
 var players = {
   1: 'player name here',
   2: 'player two',
-  current: 1 //Let first person have turn by defautl. 
+  current: 1, //Let first person have turn by default
+  me: 0
 };
 
 var playerColor = {
@@ -67,8 +68,8 @@ $.each([[x,y],    [x+30,y],     [x+60,y],
     layer.add(cell);
 
     cell.on('mouseover', moveIntoCell);
-    cell.on('mouseout', moveOutOfCell)
-    cell.on('click', clickedCell)
+    cell.on('mouseout', moveOutOfCell);
+    cell.on('click', clickedCell);
   });
 
 stage.add(layer);
