@@ -25,7 +25,7 @@ io.sockets.on('connection', function (socket) {
 
   socket.on('cellClicked', function (cell) {
     console.log(cell);
-    socket.broadcast.emit(cell);
+    socket.broadcast.emit('CellTaken',cell);
   });
 
 

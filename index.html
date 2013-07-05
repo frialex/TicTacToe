@@ -13,6 +13,17 @@
 		players.me = data.player;
 		// socket.emit('testSend', 'important data');
 	});
+
+	socket.on('CellTaken', function(state){
+		console.log(state);
+
+		var cell = gameState[state.board][state.cell];
+
+		players.current = drawTicTacToe(state.player, cell);		
+
+
+
+	});
 	</script>
 
 </head>

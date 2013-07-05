@@ -23,7 +23,7 @@ function moveIntoCell(e){
 	var x = e.targetNode.attrs.x;
 	var y = e.targetNode.attrs.y;
 	//Draw a shape of players color inside the cell
-	if(players.current === 1){
+	if(players.me === 1){
 		feedbackShape = new Kinetic.Circle({
 			x: x + 15,
 			y: y + 15,
@@ -60,25 +60,14 @@ function clickedCell(e){
 	if(players.me !== players.current) return;
 	
 	var ci = e.targetNode.attrs.id;
+	var cell = e.targetNode;
 	var stage  = e.targetNode.parent;
 	var clickedCellState = gameState[ci.board][ci.cell].ttt.cellOwner;
 	//if no marker,  return
 	if(clickedCellState !== 0) return;
 
-	var x = e.targetNode.attrs.x;
-	var y = e.targetNode.attrs.y;
-	var nextTurn;
 
-	switch(players.current)	{
-		case 1: drawTic(x,y,stage);
-					gameState[ci.board][ci.cell].ttt.cellOwner = 1;
-					nextTurn = 2;
-					break;
-		case 2: drawTac(x,y,stage);
-					gameState[ci.board][ci.cell].ttt.cellOwner = 2;
-					nextTurn = 1;
-					break;
-	}
+	var nextTurn = drawTicTacToe(players.current,cell);
 
 
 	//in this board, check for three in a row. If found, 
@@ -92,19 +81,41 @@ function clickedCell(e){
 	}
 
 	
+	//send move to other player
+	socket.emit('cellClicked', {	board : ci.board,
+								 	cell  : ci.cell,
+								 	player: players.current,								    
+								});
+
 
 	//If no winner, transfer control to other player
 	players.current = nextTurn;
 
-	//send move to other player
-	socket.emit('cellClicked', {	board : ci.board,
-								 	cell  : ci.cell,
-								    player: gameState[ci.board][ci.cell].ttt.cellOwner});
-
-
 	//enable the next board, and disable others, per rule
 
 
+}
+
+function drawTicTacToe(player, cell)
+{
+	var nextTurn;
+	var x = cell.attrs.x;
+	var y = cell.attrs.y;
+	var stage = cell.parent;
+
+
+	switch(player)	{
+		case 1: drawTic(x,y,stage);
+				cell.ttt.cellOwner = 1;
+				nextTurn = 2;
+				break;
+		case 2: drawTac(x,y,stage);
+				cell.ttt.cellOwner = 2;
+				nextTurn = 1;
+				break;
+	}
+
+	return nextTurn;
 }
 
 //Go through all possible combination of three in a row
