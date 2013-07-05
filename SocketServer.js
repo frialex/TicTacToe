@@ -19,15 +19,11 @@ io.sockets.on('connection', function (socket) {
   socket.emit('PlayerNumber', { player: PlayerNumber });
   PlayerNumber++;
 
-  socket.on('testSend', function (data) {
-    console.log('From: ' + socket.id + ' Data: ' + data);
-  });
 
   socket.on('cellClicked', function (cell) {
     console.log(cell);
     socket.broadcast.emit('CellTaken',cell);
   });
-
 
 
 });

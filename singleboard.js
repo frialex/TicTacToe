@@ -17,8 +17,8 @@ var playerColor = {
 };
 
 //2d array, index by cell.attr.id.board
-//[boardId][Celld] => 0 = nothing in it
-//                 => 1...n = player n's symbol in cell
+//[boardId][CellId] => Cell object 
+//[boardId][CellId].ttt => Games custom vars
 var gameState = [];
 
 
@@ -47,9 +47,7 @@ $(function StartUp(){
           function(i, xy){
             stageDrawer(xy[0],xy[1]);
   });
-
 });
-
 
 function drawBoard(stage, boardId, x, y){
 
@@ -57,22 +55,39 @@ function drawBoard(stage, boardId, x, y){
 
   var cellId = 0;
   gameState[boardId] = new Array(9);
-//draw 9 squares inside the box
-//Create this matrix with [x,y] = permutation(10,40,70)?
-$.each([[x,y],    [x+30,y],     [x+60,y],
-        [x,y+30], [x+30,y+30],  [x+60,y+30],
-        [x,y+60], [x+30,y+60],  [x+60,y+60]], 
+  //draw 9 squares inside the box
+  //Create this matrix with [x,y] = permutation(10,40,70)?
+  $.each([[x,y],    [x+30,y],     [x+60,y],
+          [x,y+30], [x+30,y+30],  [x+60,y+30],
+          [x,y+60], [x+30,y+60],  [x+60,y+60]], 
 
-  function CellMaker(i, xy){
-    var cell = createRect(xy[0],xy[1],30,30, boardId, cellId++);
-    layer.add(cell);
+    function CellMaker(i, xy){
+      var cell = drawCell(xy[0],xy[1],30,30, boardId, cellId++);
+      layer.add(cell);
 
-    cell.on('mouseover', moveIntoCell);
-    cell.on('mouseout', moveOutOfCell);
-    cell.on('click', clickedCell);
+      cell.on('mouseover', moveIntoCell);
+      cell.on('mouseout', moveOutOfCell);
+      cell.on('click', clickedCell);
+    });
+
+  stage.add(layer);
+}
+
+function drawCell(x, y, width, height, boardId, cellId) {
+  var cell = new Kinetic.Rect({
+    x: x,
+    y: y,
+    width: width,
+    height: height,
+    stroke: 'black',
+    strokeWidth: 2,
+    id: { board: boardId, cell: cellId }
   });
 
-stage.add(layer);
+  cell.ttt = {}; //Name space for this app
+  cell.ttt.cellOwner = 0;
 
+  gameState[boardId][cellId] = cell;
+  return cell;
 }
 

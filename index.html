@@ -10,18 +10,14 @@
 	var socket = io.connect('http://localhost:666');
 	socket.on('PlayerNumber', function(data){
 		console.log(data);
-		players.me = data.player;
-		// socket.emit('testSend', 'important data');
+		players.me = data.player;		
 	});
 
 	socket.on('CellTaken', function(state){
 		console.log(state);
 
 		var cell = gameState[state.board][state.cell];
-
-		players.current = drawTicTacToe(state.player, cell);		
-
-
+		players.current = drawTicTacToe(state.player, cell);
 
 	});
 	</script>
