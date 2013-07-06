@@ -18,6 +18,7 @@
 
 		var cell = gameState[state.board][state.cell];
 		players.current = drawTicTacToe(state.player, cell);
+		disableBoards(state.cell);
 
 	});
 	</script>

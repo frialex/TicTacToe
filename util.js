@@ -4,8 +4,8 @@ function moveIntoCell(e){
 	var x = ci.x;
 	var y = ci.y;
 
-	if(gameState[ci.id.board][ci.id.cell].ttt.cellOwner !== 0)
-		return;
+	if((gameState[ci.id.board][ci.id.cell].ttt.cellOwner !== 0)
+	|| (!e.targetNode.ttt.enabled))	return;
 
 	//Draw a shape of players color inside the cell
 	if(players.me === 1){
@@ -18,7 +18,7 @@ function moveIntoCell(e){
 }
 
 function moveOutOfCell(e){	
-	feedbackShape.hide();
+	if(feedbackShape) feedbackShape.hide();
 	this.parent.drawScene();
 }
 
@@ -31,7 +31,8 @@ function clickedCell(e){
 	var clickedCellState = gameState[ci.board][ci.cell].ttt.cellOwner;
 
 	//If cell taken, return
-	if(clickedCellState !== 0) return;
+	if((clickedCellState !== 0)
+	|| (!cell.ttt.enabled)) return;
 
 	var nextTurn = drawTicTacToe(players.current,cell);
 
@@ -57,31 +58,34 @@ function clickedCell(e){
 	players.current = nextTurn;
 
 	//enable the next board, and disable others, per rule
+	disableBoards(ci.cell);
 	//TODO: need to send this over socket
 	//TODO: need to cycle player number on socket to 1, or 2. 
 	//		on disconnect decrement..
+	
+
+}
+
+function disableBoards(enabledBoard){
 	$.each(gameState, function(i, board){
-		if(i !== ci.cell)
+		if(i !== enabledBoard)
 		{
-			console.log(i + ' ' + board);
-			$.each(board, function(i, cell){
-				console.log(cell.attrs.id);
+			$.each(board, function(i, cell){				
 				cell.enableDashArray();
 				cell.setDashArray([2,3]);
-
+				cell.ttt.enabled = false;
 			});
 		}
 		else
 		{
 			$.each(board, function(i, cell){
 				cell.disableDashArray();
+				cell.ttt.enabled = true;
 			});
 		}
 
 		board[0].parent.drawScene();
-
 	});
-
 }
 
 

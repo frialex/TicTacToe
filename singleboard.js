@@ -87,6 +87,7 @@ function drawCell(x, y, width, height, boardId, cellId) {
 
   cell.ttt = {}; //Name space for this app
   cell.ttt.cellOwner = 0;
+  cell.ttt.enabled = true;
 
   gameState[boardId][cellId] = cell;
   return cell;
