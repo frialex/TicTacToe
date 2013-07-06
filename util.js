@@ -1,27 +1,11 @@
-
-function drawCell(x, y, width, height, boardId, cellId) {
-	var cell = new Kinetic.Rect({
-		x: x,
-		y: y,
-		width: width,
-		height: height,
-		stroke: 'black',
-		strokeWidth: 2,
-		id: { board: boardId, cell: cellId }
-	});
-
-	cell.ttt = {}; //Name space for this app
-	cell.ttt.cellOwner = 0;
-
-	gameState[boardId][cellId] = cell;
-	return cell;
-}
-
-
 function moveIntoCell(e){
 	
-	var x = e.targetNode.attrs.x;
-	var y = e.targetNode.attrs.y;
+	var ci = e.targetNode.attrs;
+	var x = ci.x;
+	var y = ci.y;
+
+	if(gameState[ci.id.board][ci.id.cell].ttt.cellOwner !== 0)
+		return;
 
 	//Draw a shape of players color inside the cell
 	if(players.me === 1){
@@ -73,7 +57,30 @@ function clickedCell(e){
 	players.current = nextTurn;
 
 	//enable the next board, and disable others, per rule
+	//TODO: need to send this over socket
+	//TODO: need to cycle player number on socket to 1, or 2. 
+	//		on disconnect decrement..
+	$.each(gameState, function(i, board){
+		if(i !== ci.cell)
+		{
+			console.log(i + ' ' + board);
+			$.each(board, function(i, cell){
+				console.log(cell.attrs.id);
+				cell.enableDashArray();
+				cell.setDashArray([2,3]);
 
+			});
+		}
+		else
+		{
+			$.each(board, function(i, cell){
+				cell.disableDashArray();
+			});
+		}
+
+		board[0].parent.drawScene();
+
+	});
 
 }
 

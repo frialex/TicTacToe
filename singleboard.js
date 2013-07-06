@@ -16,6 +16,7 @@ var playerColor = {
   2: 'green'
 };
 
+
 //2d array, index by cell.attr.id.board
 //[boardId][CellId] => Cell object 
 //[boardId][CellId].ttt => Games custom vars
@@ -90,4 +91,6 @@ function drawCell(x, y, width, height, boardId, cellId) {
   gameState[boardId][cellId] = cell;
   return cell;
 }
+
+//    dashArray: [2,3]
 
