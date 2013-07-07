@@ -44,7 +44,11 @@ function clickedCell(e){
 		console.log('board was won!');
 		//in the stage, check for three boards in a row that are owned 
 		//by the player. If so, show winner screen
+
 		//socket.emit: player, board..
+		//TODO: After a board is won the other 
+		//can still be sent there and play on that board..
+		//FIX THAT
 	}
 	
 	//send move to other player
@@ -59,36 +63,35 @@ function clickedCell(e){
 
 	//enable the next board, and disable others, per rule
 	disableBoards(ci.cell);
-	//TODO: need to send this over socket
 	//TODO: need to cycle player number on socket to 1, or 2. 
 	//		on disconnect decrement..
 	
 
 }
 
-function disableBoards(enabledBoard){
-	$.each(gameState, function(i, board){
-		if(i !== enabledBoard)
-		{
-			$.each(board, function(i, cell){				
-				cell.enableDashArray();
-				cell.setDashArray([2,3]);
-				cell.ttt.enabled = false;
-			});
-		}
-		else
-		{
-			$.each(board, function(i, cell){
-				cell.disableDashArray();
-				cell.ttt.enabled = true;
-			});
-		}
 
+function disableBoards(enabledBoard){
+
+	$.each(gameState, function(i,board){
+		$.each(board, function(i, cell){			
+			cell.enableDashArray();
+			cell.setDashArray([2,3]);
+			cell.ttt.enabled = false;
+		});
 		board[0].parent.drawScene();
 	});
+
+	if(players.me === players.current)
+	{
+		var nextBoard =	gameState[enabledBoard];
+		$.each(gameState[enabledBoard], function(i, cell){
+			cell.disableDashArray();
+			cell.ttt.enabled = true;
+		});
+		nextBoard[0].parent.drawScene();		
+	}
+
 }
-
-
 
 //Go through all possible combination of three in a row
 function CheckForWinner(board, layer)
