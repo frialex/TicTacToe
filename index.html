@@ -25,6 +25,12 @@
 		players.current = turn;
 	});
 
+	socket.on('boardWon', function(data){
+		$.each(gameState[data.board], function(i, cell){
+			cell.attrs.fill = playerColor[data.winner];
+		});
+	});
+
 	</script>
 
 </head>

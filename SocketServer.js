@@ -29,6 +29,11 @@ io.sockets.on('connection', function (socket) {
     socket.broadcast.emit('CellTaken',cell);
   });
 
+  socket.on('boardWon', function(data){
+    console.log('Board won: ' + data.board + ' by: ' + data.winner);
+    socket.broadcast.emit('boardWon', data);
+  });
+
   socket.on('disconnect', function(){
     console.log('Player ' + socket.id + ' disconnected!');
     console.log('players[socket.id]: ' + players[socket.id]);

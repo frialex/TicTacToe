@@ -110,6 +110,12 @@ function CheckForWinner(board, layer)
 				if( (first === second) && (first === third) && (first > 0) )
 				{
 					winner = first;
+
+					socket.emit('boardWon', {
+									winner: winner,
+									board: board[0].attrs.id.board
+								});
+
 					$.each(board, function(i, cell){
 						cell.attrs.fill = playerColor[players.current];
 					})
