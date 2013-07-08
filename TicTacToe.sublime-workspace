@@ -4,6 +4,78 @@
 		"selected_items":
 		[
 			[
+				"en",
+				"enabledBoard"
+			],
+			[
+				"dis",
+				"disableDashArray"
+			],
+			[
+				"ne",
+				"nextBoard"
+			],
+			[
+				"ena",
+				"enabledBoard"
+			],
+			[
+				"pl",
+				"PlayerNumber"
+			],
+			[
+				"enabled",
+				"enabled"
+			],
+			[
+				"d",
+				"drawScene"
+			],
+			[
+				"dash",
+				"dashArray"
+			],
+			[
+				"bo",
+				"board"
+			],
+			[
+				"drawT",
+				"drawTac"
+			],
+			[
+				"draw",
+				"drawTic"
+			],
+			[
+				"das",
+				"dashArray"
+			],
+			[
+				"pla",
+				"players"
+			],
+			[
+				"play",
+				"players"
+			],
+			[
+				"nex",
+				"nextTurn"
+			],
+			[
+				"p",
+				"PlayerNumber"
+			],
+			[
+				"cel",
+				"cellOwner"
+			],
+			[
+				"cell",
+				"cell"
+			],
+			[
 				"e",
 				"express"
 			],
@@ -14,10 +86,6 @@
 			[
 				"fi",
 				"fill"
-			],
-			[
-				"cell",
-				"cellOwner"
 			],
 			[
 				"Cu",
@@ -36,20 +104,8 @@
 				"src"
 			],
 			[
-				"pl",
-				"player"
-			],
-			[
-				"ne",
-				"nextTurn"
-			],
-			[
 				"chec",
 				"checLine"
-			],
-			[
-				"pla",
-				"playerColor"
 			],
 			[
 				"s",
@@ -58,18 +114,6 @@
 			[
 				"board",
 				"board"
-			],
-			[
-				"bo",
-				"board"
-			],
-			[
-				"draw",
-				"drawTic"
-			],
-			[
-				"cel",
-				"cell"
 			],
 			[
 				"st",
@@ -108,10 +152,6 @@
 				"strokeWidth"
 			],
 			[
-				"p",
-				"p"
-			],
-			[
 				"f",
 				"f"
 			],
@@ -147,7 +187,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 604,
+				"buffer_size": 872,
 				"line_ending": "Unix"
 			}
 		},
@@ -155,15 +195,7 @@
 			"file": "singleboard.js",
 			"settings":
 			{
-				"buffer_size": 1715,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "util.js",
-			"settings":
-			{
-				"buffer_size": 2852,
+				"buffer_size": 2144,
 				"line_ending": "Unix"
 			}
 		},
@@ -171,15 +203,15 @@
 			"file": "SocketServer.js",
 			"settings":
 			{
-				"buffer_size": 509,
+				"buffer_size": 1278,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "package.json",
+			"file": "util.js",
 			"settings":
 			{
-				"buffer_size": 149,
+				"buffer_size": 3737,
 				"line_ending": "Unix"
 			}
 		}
@@ -271,7 +303,7 @@
 				"Bookmarks: Select Next"
 			]
 		],
-		"width": 431.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -288,10 +320,11 @@
 	},
 	"file_history":
 	[
+		"/Users/frialex/dev/TicTacToe/package.json",
+		"/Users/frialex/dev/TicTacToe/SocketServer.js",
 		"/Users/frialex/Documents/Work/Mobile_Form/js/main.js",
 		"/Users/frialex/dev/TicTacToe/singleboard.js",
 		"/Users/frialex/Documents/Work/Mobile_Form/test.html",
-		"/Users/frialex/dev/TicTacToe/package.json",
 		"/Users/frialex/dev/TicTacToe/packages.json",
 		"/Users/frialex/Documents/Work/Mobile_Form/index.html",
 		"/Users/frialex/Documents/Work/Mobile_Form/js/FormController.js",
@@ -320,6 +353,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"per",
+			"ci.cell",
+			"createRect",
+			"ci",
+			"CellTaken",
+			"cellClicked",
+			"e",
+			"gameState",
+			"cell",
+			"feedbackShape",
+			"cellClicked",
 			",'/')));",
 			"currentPlayer",
 			"board[row[1]]",
@@ -443,7 +487,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -451,15 +495,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 604,
+						"buffer_size": 872,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								91,
-								91
+								801,
+								801
 							]
 						],
 						"settings":
@@ -478,15 +522,15 @@
 					"file": "singleboard.js",
 					"settings":
 					{
-						"buffer_size": 1715,
+						"buffer_size": 2144,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1617,
+								1617
 							]
 						],
 						"settings":
@@ -496,7 +540,35 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1024.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "SocketServer.js",
+					"settings":
+					{
+						"buffer_size": 1278,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1274,
+								1274
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 276.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -508,19 +580,19 @@
 			"sheets":
 			[
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "util.js",
 					"settings":
 					{
-						"buffer_size": 2852,
+						"buffer_size": 3737,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2681,
-								2681
+								1363,
+								1363
 							]
 						],
 						"settings":
@@ -528,62 +600,8 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 1.0,
-						"translation.y": 1573.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "SocketServer.js",
-					"settings":
-					{
-						"buffer_size": 509,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								342,
-								342
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "package.json",
-					"settings":
-					{
-						"buffer_size": 149,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								102,
-								102
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 589.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -619,7 +637,7 @@
 		"cols":
 		[
 			0.0,
-			0.430120849609,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -644,32 +662,40 @@
 		"selected_items":
 		[
 			[
+				"sock",
+				"SocketServer.js"
+			],
+			[
 				"in",
-				"/Users/frialex/dev/TicTacToe/index.html"
+				"index.html"
 			],
 			[
 				"so",
-				"/Users/frialex/dev/TicTacToe/SocketServer.js"
+				"SocketServer.js"
+			],
+			[
+				"",
+				"index.html"
 			],
 			[
 				"sin",
-				"/Users/frialex/dev/TicTacToe/singleboard.js"
+				"singleboard.js"
 			],
 			[
-				"ut",
-				"/Users/frialex/dev/TicTacToe/util.js"
+				"u",
+				"util.js"
 			],
 			[
 				"s",
-				"/Users/frialex/dev/TicTacToe/SocketServer.js"
+				"SocketServer.js"
+			],
+			[
+				"ut",
+				"util.js"
 			],
 			[
 				"ma",
 				"/Users/frialex/Documents/Work/Mobile_Form/js/main.js"
-			],
-			[
-				"",
-				"/Users/frialex/Documents/Work/Mobile_Form/index.html"
 			],
 			[
 				"te",
@@ -730,10 +756,10 @@
 		],
 		"width": 380.0
 	},
-	"show_minimap": true,
+	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
-	"side_bar_width": 145.0,
+	"side_bar_visible": false,
+	"side_bar_width": 107.0,
 	"status_bar_visible": true
 }
