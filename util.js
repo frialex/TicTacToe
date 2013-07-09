@@ -45,10 +45,18 @@ function clickedCell(e){
 		//in the stage, check for three boards in a row that are owned 
 		//by the player. If so, show winner screen
 
-		//socket.emit: player, board..
-		//TODO: After a board is won the other 
+		//TODO: After a board is won the other player
 		//can still be sent there and play on that board..
-		//FIX THAT
+		//and win the board again..
+
+		//Instead, create a new row and column of boards 
+		//(add three boards on the bottom and three to the right)
+		//and randomly place the next player in one of the newly 
+		//created board? 
+
+		//Do we want to employ randomness in this??
+
+		
 	}
 	
 	//send move to other player

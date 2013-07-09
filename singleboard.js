@@ -92,6 +92,3 @@ function drawCell(x, y, width, height, boardId, cellId) {
   gameState[boardId][cellId] = cell;
   return cell;
 }
-
-//    dashArray: [2,3]
-
