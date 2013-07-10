@@ -39,23 +39,14 @@ function clickedCell(e){
 
 	//in this board, check for three in a row. If found, 
 	//Turn the color of the board to players color (red, green,...)
-	if(CheckForWinner(gameState[ci.board], e.targetNode.parent))
+	if(CheckBoardWinner(gameState[ci.board], e.targetNode.parent))
 	{
 		console.log('board was won!');
 		gameState[ci.board][0].ttt.boardOwner = players.me;
+		checkGameWinner(players.me);
 		//in the stage, check for three boards in a row that are owned 
 		//by the player. If so, show winner screen
 
-		//TODO: After a board is won the other player
-		//can still be sent there and play on that board..
-		//and win the board again..
-
-		//Instead, create a new row and column of boards 
-		//(add three boards on the bottom and three to the right)
-		//and randomly place the next player in one of the newly 
-		//created board? 
-
-		//Do we want to employ randomness in this??
 
 		
 	}
@@ -109,8 +100,41 @@ function disableBoards(enabledBoard){
 
 }
 
+function checkGameWinner(player)
+{
+	$.each([	[0,1,2],[3,4,5],[6,7,8],  //Horizontal
+				[0,3,6],[1,4,7],[2,5,8], //Vertical
+				[0,4,8],[2,4,6] ], 		//Diagonal 
+
+				function(i, row){
+					var firstBoardState = gameState[row[0]][0].ttt.boardOwner;
+					var secondBoardState = gameState[row[1]][0].ttt.boardOwner;
+					var thirdBoardState = gameState[row[2]][0].ttt.boardOwner;
+					var total = firstBoardState + secondBoardState + thirdBoardState;
+					if(total >= 3) {
+						if((firstBoardState === secondBoardState) && (firstBoardState === thirdBoardState)){
+							console.log('GAME WINNER!!!');
+
+							socket.emit('gameWon', {
+													player: player
+													});
+
+							colorTheStage(player);
+						}
+					}
+				});
+}
+
+function colorTheStage(pNum){
+	//Pick a random board
+	//delete it from game state array
+	//adjust random num gen so next random is n-1
+
+	//Start slowly coloring the cells of the board to pNum
+}
+
 //Go through all possible combination of three in a row
-function CheckForWinner(board, layer)
+function CheckBoardWinner(board, layer)
 {
 
 	var winner = 0;

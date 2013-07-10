@@ -34,6 +34,10 @@ io.sockets.on('connection', function (socket) {
     socket.broadcast.emit('boardWon', data);
   });
 
+  socket.on('gameWon', function(data){
+    socket.broadcast.emit('gameWon', data);
+  });
+
   socket.on('disconnect', function(){
     console.log('Player ' + socket.id + ' disconnected!');
     console.log('players[socket.id]: ' + players[socket.id]);

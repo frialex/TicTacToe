@@ -32,6 +32,11 @@
 			});
 	});
 
+	socket.on('gameWon', function(data){
+		console.log('GAME WON!! : ' + data.player);
+		colorTheStage(data.player);
+	});
+
 	</script>
 
 </head>
