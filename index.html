@@ -26,9 +26,10 @@
 	});
 
 	socket.on('boardWon', function(data){
+		gameState[data.board][0].ttt.boardOwner = data.winner;
 		$.each(gameState[data.board], function(i, cell){
 			cell.attrs.fill = playerColor[data.winner];
-		});
+			});
 	});
 
 	</script>

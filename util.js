@@ -42,6 +42,7 @@ function clickedCell(e){
 	if(CheckForWinner(gameState[ci.board], e.targetNode.parent))
 	{
 		console.log('board was won!');
+		gameState[ci.board][0].ttt.boardOwner = players.me;
 		//in the stage, check for three boards in a row that are owned 
 		//by the player. If so, show winner screen
 
@@ -91,8 +92,15 @@ function disableBoards(enabledBoard){
 
 	if(players.me === players.current)
 	{
-		var nextBoard =	gameState[enabledBoard];
-		$.each(gameState[enabledBoard], function(i, cell){
+		//TODO: Infinite loop here.. will be fixed 
+		//After code to check for three boards in a row.. 
+		//ignore for now.
+		var nextBoard = gameState[enabledBoard]; 
+		while(nextBoard[0].ttt.boardOwner !== 0) {
+			nextBoard = gameState[Math.floor(Math.random()*8)];
+		}
+
+		$.each(nextBoard, function(i, cell){
 			cell.disableDashArray();
 			cell.ttt.enabled = true;
 		});
