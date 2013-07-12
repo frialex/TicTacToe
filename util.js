@@ -48,7 +48,13 @@ function clickedCell(e){
 		//by the player. If so, show winner screen
 
 
-		
+		//TODO: If all cells are taken, and there can be no more moves in it color it black
+		//TODO: Amber got sent to board with all cells taken.
+		//TODO: If that condition, or where you can't find a random board
+		//Add a new row and column of boards
+		//Maybe change the color of the players, and see how big of a quilt you can make
+
+		//_.debounce(colorFunction)? randomly pick a number between 10-100 for the bounce factor
 	}
 	
 	//send move to other player
